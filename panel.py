@@ -24,6 +24,7 @@ ZONE2Y = 115
 ZONE3Y = 170
 FMTX = 120
 CIRCLEX = 260
+DELAY = 1 #frequenza aggiornamento (espressa in secondi) 
 # ******************************************************
 
 import socket
@@ -171,6 +172,7 @@ class Panel:
 
     def run(self):
         while self.running:
+            time.sleep(DELAY)
             self.events()
             self.update()
             self.draw()
